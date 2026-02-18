@@ -217,8 +217,7 @@ stdenv.mkDerivation (finalAttrs: {
 
     rm -r node_modules/@signalapp/sqlcipher
     cp -r ${signal-sqlcipher} node_modules/@signalapp/sqlcipher
-  ''
-  + lib.optionalString stdenv.hostPlatform.isDarwin ''
+
     # fs-xattr is required at runtime by preload.wrapper.js,
     # but with npmRebuild disabled its native binding is missing.
     # Build it explicitly against Electron headers ahead of packaging.
@@ -245,7 +244,7 @@ stdenv.mkDerivation (finalAttrs: {
       --config.extraMetadata.environment=$SIGNAL_ENV \
       -c.electronDist=electron-dist \
       -c.electronVersion=${electron.version} \
-      ${lib.optionalString stdenv.hostPlatform.isDarwin "-c.npmRebuild=false"} \
+      -c.npmRebuild=false \
       ${lib.optionalString stdenv.hostPlatform.isDarwin "-c.mac.identity=null"}
 
     runHook postBuild

@@ -97,7 +97,7 @@ stdenv.mkDerivation (finalAttrs: {
   + lib.optionalString stdenv.isDarwin ''
     substituteInPlace build/config/clang/BUILD.gn \
       --replace-fail '_clang_lib_dir = "$clang_base_path/lib/clang/$clang_version/lib"' \
-        '_clang_lib_dir = "${llvmPackages.compiler-rt}/lib"'
+                     '_clang_lib_dir = "${llvmPackages.compiler-rt}/lib"'
 
     # Keep target triple aligned with nix cc-wrapper expectations to avoid
     # arm64-apple-macos vs arm64-apple-darwin warning spam.
