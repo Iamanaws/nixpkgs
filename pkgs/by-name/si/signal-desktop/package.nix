@@ -293,6 +293,7 @@ stdenv.mkDerivation (finalAttrs: {
       ++ lib.optional withAppleEmojis unfree;
     maintainers = with lib.maintainers; [
       eclairevoyant
+      iamanaws
       marcin-serwin
       teutat3s
     ];
