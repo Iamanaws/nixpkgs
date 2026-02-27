@@ -12,9 +12,6 @@ fi
 
 update-source-version mongodb-compass "$latestVersion"
 
-systems=$(nix eval --json -f . mongodb-compass.meta.platforms | jq -r '.[]')
-for system in $systems; do
-  url=$(nix eval --raw -f . mongodb-compass.src.url --system "$system")
-  hash=$(nix --extra-experimental-features nix-command hash convert --to sri --hash-algo sha256 $(nix-prefetch-url "$url"))
-  update-source-version mongodb-compass "$latestVersion" "$hash" --system=$system --ignore-same-version --ignore-same-hash
-done
+srcUrl="https://github.com/mongodb-js/compass/archive/refs/tags/v${latestVersion}.tar.gz"
+srcHash=$(nix --extra-experimental-features nix-command hash convert --to sri --hash-algo sha256 "$(nix-prefetch-url --unpack "$srcUrl")")
+update-source-version mongodb-compass "$latestVersion" "$srcHash" --ignore-same-version --ignore-same-hash
