@@ -2962,6 +2962,8 @@ self: super: with self; {
 
   coincurve = callPackage ../development/python-modules/coincurve { inherit (pkgs) secp256k1; };
 
+  coingecko-openapi-client = callPackage ../development/python-modules/coingecko-openapi-client { };
+
   coinmetrics-api-client = callPackage ../development/python-modules/coinmetrics-api-client { };
 
   colander = callPackage ../development/python-modules/colander { };
