@@ -3672,6 +3672,8 @@ self: super: with self; {
 
   dbglib = callPackage ../development/python-modules/dbglib { };
 
+  dbos = callPackage ../development/python-modules/dbos { };
+
   dbt-adapters = callPackage ../development/python-modules/dbt-adapters { };
 
   dbt-bigquery = callPackage ../development/python-modules/dbt-bigquery { };
