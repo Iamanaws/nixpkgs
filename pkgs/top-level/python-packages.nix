@@ -18603,6 +18603,8 @@ self: super: with self; {
 
   stanza = callPackage ../development/python-modules/stanza { };
 
+  starfish-protocol = callPackage ../development/python-modules/starfish-protocol { };
+
   starkbank-ecdsa = callPackage ../development/python-modules/starkbank-ecdsa { };
 
   starlette = callPackage ../development/python-modules/starlette { };
