@@ -11385,6 +11385,8 @@ self: super: with self; {
     tesseract = pkgs.tesseract5;
   };
 
+  octobot-tulipy = callPackage ../development/python-modules/octobot-tulipy { };
+
   od = callPackage ../development/python-modules/od { };
 
   odc-geo = callPackage ../development/python-modules/odc-geo { };
