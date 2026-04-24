@@ -20779,6 +20779,8 @@ self: super: with self; {
     callPackage ../development/python-modules/vacuum-map-parser-roborock
       { };
 
+  vadersentiment = callPackage ../development/python-modules/vadersentiment { };
+
   validate-email = callPackage ../development/python-modules/validate-email { };
 
   validator-collection = callPackage ../development/python-modules/validator-collection { };
