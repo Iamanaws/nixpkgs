@@ -18607,6 +18607,8 @@ self: super: with self; {
 
   starfish-sdk = callPackage ../development/python-modules/starfish-sdk { };
 
+  starfish-server = callPackage ../development/python-modules/starfish-server { };
+
   starkbank-ecdsa = callPackage ../development/python-modules/starkbank-ecdsa { };
 
   starlette = callPackage ../development/python-modules/starlette { };
