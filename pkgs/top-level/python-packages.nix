@@ -17786,6 +17786,8 @@ self: super: with self; {
 
   simplesqlite = callPackage ../development/python-modules/simplesqlite { };
 
+  simplifiedpytrends = callPackage ../development/python-modules/simplifiedpytrends { };
+
   simplisafe-python = callPackage ../development/python-modules/simplisafe-python { };
 
   simpy = callPackage ../development/python-modules/simpy { };
