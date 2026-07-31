@@ -10,6 +10,7 @@
   pnpmConfigHook,
   pnpmBuildHook,
   electron_43,
+  gn,
   python3,
   makeWrapper,
   callPackage,
@@ -42,7 +43,13 @@ let
     inherit nodejs;
   };
 
-  webrtc = callPackage ./webrtc.nix { };
+  webrtc = callPackage ./webrtc.nix {
+    gn = gn.override {
+      version = "0-unstable-2026-05-27";
+      rev = "3357c4f51b1a9e676378c695dd9c7e9911c35ee6";
+      hash = "sha256-/1A+DkzAQj2zGPe/A/G0Z3VrYJXUxq4Hd/+d/o5p3G8=";
+    };
+  };
   ringrtc = callPackage ./ringrtc.nix { inherit webrtc; };
 
   version = "8.21.0";
